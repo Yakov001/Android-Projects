@@ -1,5 +1,7 @@
 package com.bignerdranch.android.criminalintent;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,6 +26,7 @@ public class CrimeFragment extends Fragment {
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+    public static final String RESULT_ID = "ID";
 
     private static final String ARG_CRIME_ID = "crime_id";
 
@@ -83,5 +86,17 @@ public class CrimeFragment extends Fragment {
 
         return v;
 
+    }
+
+    public void returnResult() {
+        Intent intent = new Intent();
+        intent.putExtra(RESULT_ID, mCrime.getId());
+        getActivity().setResult(Activity.RESULT_OK, intent);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        returnResult();
     }
 }

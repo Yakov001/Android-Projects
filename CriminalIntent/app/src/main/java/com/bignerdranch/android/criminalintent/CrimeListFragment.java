@@ -1,6 +1,7 @@
 package com.bignerdranch.android.criminalintent;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,11 +20,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.DateFormat;
 import java.util.List;
+import java.util.UUID;
+
+import static com.bignerdranch.android.criminalintent.CrimeFragment.RESULT_ID;
 
 public class CrimeListFragment extends Fragment {
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
     private static final int REQUEST_CRIME = 1;
+    private UUID mChangedCrimeId;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -93,10 +99,19 @@ public class CrimeListFragment extends Fragment {
                     .show();
              */
             Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
-            startActivity(intent);
+            startActivityForResult(intent , REQUEST_CRIME);
         }
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CRIME) {
+            if (resultCode == Activity.RESULT_OK){
+                mChangedCrimeId = (UUID) data.getSerializableExtra(RESULT_ID);
+            }
+        }
+    }
 
     private class CrimeHolderPolice extends RecyclerView.ViewHolder implements View.OnClickListener{
 
