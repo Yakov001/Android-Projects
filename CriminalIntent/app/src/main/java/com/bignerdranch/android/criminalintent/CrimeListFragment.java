@@ -45,7 +45,11 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
-            mAdapter.notifyItemChanged(1);
+            for (int i = 0; i < crimes.size(); i++){
+                if (crimes.get(i).getId() == ) {
+                    mAdapter.notifyItemChanged(i);
+                }
+            }
         }
     }
 
@@ -93,10 +97,13 @@ public class CrimeListFragment extends Fragment {
                     .show();
              */
             Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
-            startActivity(intent);
-        }
+            startActivityForResult(intent, REQUEST_CRIME);        }
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+    }
 
     private class CrimeHolderPolice extends RecyclerView.ViewHolder implements View.OnClickListener{
 

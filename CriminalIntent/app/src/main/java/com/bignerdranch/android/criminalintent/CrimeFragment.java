@@ -1,5 +1,6 @@
 package com.bignerdranch.android.criminalintent;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -83,5 +84,9 @@ public class CrimeFragment extends Fragment {
 
         return v;
 
+    }
+    // Нужно как-то вернуть mCrime.getId(), однак этот метод возвращает только int
+    public void returnResult(){
+        getActivity().setResult(mCrime.getId(), null);
     }
 }
