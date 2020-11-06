@@ -89,14 +89,16 @@ public class CrimeFragment extends Fragment {
     }
 
     public void returnResult() {
+        Intent intent1 = getActivity().getIntent();
+        UUID id = (UUID) intent1.getSerializableExtra("1");
         Intent intent = new Intent();
         intent.putExtra(RESULT_ID, mCrime.getId());
         getActivity().setResult(Activity.RESULT_OK, intent);
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onPause() {
+        super.onPause();
         returnResult();
     }
 }

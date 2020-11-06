@@ -27,7 +27,7 @@ import static com.bignerdranch.android.criminalintent.CrimeFragment.RESULT_ID;
 public class CrimeListFragment extends Fragment {
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
-    private static final int REQUEST_CRIME = 1;
+    public static final int REQUEST_CRIME = 1;
     private UUID mChangedCrimeId;
 
 
@@ -51,7 +51,13 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
-            mAdapter.notifyItemChanged(1);
+            /*for (int i = 0; i < crimes.size(); i++){
+                if (crimes.get(i).getId() == mChangedCrimeId) {
+                    mAdapter.notifyItemChanged(i);
+                }
+            }
+             */
+            mAdapter.notifyItemChanged(crimeLab.getCrime(mChangedCrimeId).getPosition());
         }
     }
 
@@ -107,9 +113,10 @@ public class CrimeListFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CRIME) {
-            if (resultCode == Activity.RESULT_OK){
+            if (resultCode == Activity.RESULT_OK) {
                 mChangedCrimeId = (UUID) data.getSerializableExtra(RESULT_ID);
             }
+
         }
     }
 
