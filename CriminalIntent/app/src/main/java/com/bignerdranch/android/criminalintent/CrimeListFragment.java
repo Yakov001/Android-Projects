@@ -1,6 +1,5 @@
 package com.bignerdranch.android.criminalintent;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,14 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.text.DateFormat;
 import java.util.List;
 
 public class CrimeListFragment extends Fragment {
@@ -45,11 +40,7 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
-            for (int i = 0; i < crimes.size(); i++){
-                if (crimes.get(i).getId() == ) {
-                    mAdapter.notifyItemChanged(i);
-                }
-            }
+
         }
     }
 
@@ -97,13 +88,10 @@ public class CrimeListFragment extends Fragment {
                     .show();
              */
             Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
-            startActivityForResult(intent, REQUEST_CRIME);        }
+            startActivityForResult(intent , REQUEST_CRIME);
+        }
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
-    }
 
     private class CrimeHolderPolice extends RecyclerView.ViewHolder implements View.OnClickListener{
 
