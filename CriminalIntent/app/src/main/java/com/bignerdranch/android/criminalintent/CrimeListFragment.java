@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,7 +41,7 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
-
+            mAdapter.notifyDataSetChanged();
         }
     }
 
@@ -87,8 +88,10 @@ public class CrimeListFragment extends Fragment {
                     mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
                     .show();
              */
-            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
-            startActivityForResult(intent , REQUEST_CRIME);
+            Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.
+                    getId());
+            startActivity(intent);
+            //startActivityForResult(intent , REQUEST_CRIME);
         }
     }
 
@@ -127,7 +130,8 @@ public class CrimeListFragment extends Fragment {
                     mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
                     .show();
                     */
-            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
+            Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.
+                    getId());
             startActivity(intent);
         }
     }
