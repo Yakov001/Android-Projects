@@ -1,35 +1,25 @@
 package com.bignerdranch.android.criminalintent;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.text.DateFormat;
 import java.util.List;
-import java.util.UUID;
-
-import static com.bignerdranch.android.criminalintent.CrimeFragment.RESULT_ID;
 
 public class CrimeListFragment extends Fragment {
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
-    public static final int REQUEST_CRIME = 1;
-    private UUID mChangedCrimeId;
-
+    private static final int REQUEST_CRIME = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,13 +41,7 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
-            /*for (int i = 0; i < crimes.size(); i++){
-                if (crimes.get(i).getId() == mChangedCrimeId) {
-                    mAdapter.notifyItemChanged(i);
-                }
-            }
-             */
-            mAdapter.notifyItemChanged(crimeLab.getCrime(mChangedCrimeId).getPosition());
+            mAdapter.notifyDataSetChanged();
         }
     }
 
@@ -104,21 +88,13 @@ public class CrimeListFragment extends Fragment {
                     mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
                     .show();
              */
-            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
-            startActivityForResult(intent , REQUEST_CRIME);
+            Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.
+                    getId());
+            startActivity(intent);
+            //startActivityForResult(intent , REQUEST_CRIME);
         }
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CRIME) {
-            if (resultCode == Activity.RESULT_OK) {
-                mChangedCrimeId = (UUID) data.getSerializableExtra(RESULT_ID);
-            }
-
-        }
-    }
 
     private class CrimeHolderPolice extends RecyclerView.ViewHolder implements View.OnClickListener{
 
@@ -154,7 +130,8 @@ public class CrimeListFragment extends Fragment {
                     mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
                     .show();
                     */
-            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
+            Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.
+                    getId());
             startActivity(intent);
         }
     }
@@ -209,4 +186,6 @@ public class CrimeListFragment extends Fragment {
             return 0;
         }
     }
+
+    // Я пожилой боров в ветке dev
 }

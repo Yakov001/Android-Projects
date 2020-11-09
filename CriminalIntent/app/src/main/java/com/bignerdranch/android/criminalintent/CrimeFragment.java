@@ -30,7 +30,7 @@ public class CrimeFragment extends Fragment {
 
     private static final String ARG_CRIME_ID = "crime_id";
 
-    public static CrimeFragment newInstance (UUID crimeID){
+    public static CrimeFragment newInstance(UUID crimeID) {
         Bundle args = new Bundle();
         args.putSerializable(ARG_CRIME_ID, crimeID);
 
@@ -58,16 +58,18 @@ public class CrimeFragment extends Fragment {
             @Override
             public void beforeTextChanged(
                     CharSequence s, int start, int count, int after) {
-            // Здесь намеренно оставлено пустое место
+                // Здесь намеренно оставлено пустое место
             }
+
             @Override
             public void onTextChanged(
                     CharSequence s, int start, int before, int count) {
                 mCrime.setTitle(s.toString());
             }
+
             @Override
             public void afterTextChanged(Editable s) {
-            // И здесь тоже
+                // И здесь тоже
             }
         });
 
@@ -75,7 +77,7 @@ public class CrimeFragment extends Fragment {
         mDateButton.setText(mCrime.getDate().toString());
         mDateButton.setEnabled(false);
 
-        mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
+        mSolvedCheckBox = (CheckBox) v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.isSolved());
         mSolvedCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
