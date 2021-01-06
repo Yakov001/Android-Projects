@@ -82,7 +82,6 @@ public class CrimeFragment extends Fragment {
         });
 
         mDateButton = (Button) v.findViewById(R.id.crime_date);
-        updateDate();
         mDateButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,6 +112,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
+        updateDate();
         return v;
 
     }
@@ -137,7 +137,7 @@ public class CrimeFragment extends Fragment {
 
     private void updateDate() {
         mDateButton.setText(mCrime.getDate().toString());
-        //mTimeButton.setText(mCrime.getDate().toString());
+        mTimeButton.setText(mCrime.getDate().toString());
     }
 
     public void returnResult() {
@@ -151,6 +151,7 @@ public class CrimeFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        CrimeLab.get(getActivity()).updateCrime(mCrime);
         returnResult();
     }
 }
