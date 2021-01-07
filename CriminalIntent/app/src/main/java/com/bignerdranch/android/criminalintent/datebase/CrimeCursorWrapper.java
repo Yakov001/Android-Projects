@@ -21,6 +21,7 @@ public class CrimeCursorWrapper extends CursorWrapper {
         String title = getString(getColumnIndex(CrimeTable.Cols.TITLE));
         long date = getLong(getColumnIndex(CrimeTable.Cols.DATE));
         int isSolved = getInt(getColumnIndex(CrimeTable.Cols.SOLVED));
+        long id = getLong(getColumnIndex(CrimeTable.Cols.UUID));
 
         Crime crime = new Crime(UUID.fromString(uuidString));
         crime.setTitle(title);

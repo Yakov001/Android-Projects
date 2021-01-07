@@ -16,9 +16,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
+import java.util.UUID;
 import java.util.zip.Inflater;
 
 public class CrimeListFragment extends Fragment {
@@ -43,6 +45,19 @@ public class CrimeListFragment extends Fragment {
                 .findViewById(R.id.crime_recycler_view);
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager
                 (getActivity()));
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+                CrimeLab.get(getActivity()).deleteCrime(CrimeLab.get(getActivity()).getCrime((UUID) viewHolder.itemView.getTag()));
+            }
+        }).attachToRecyclerView(mCrimeRecyclerView);
+
         if (savedInstanceState != null) {
             mSubtitleVisible = savedInstanceState.getBoolean
                     (SAVED_SUBTITLE_VISIBLE);
@@ -187,7 +202,10 @@ public class CrimeListFragment extends Fragment {
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
             Crime crime = mCrimes.get(position);
             switch (holder.getItemViewType()){
-                case (0) : ((CrimeHolder) holder).bind(crime);
+                case (0) : {
+                    ((CrimeHolder) holder).bind(crime);
+                holder.itemView.setTag(mCrimes.get(position).getId());
+                }
                     break;
                 case (1) : ((CrimeHolderPolice) holder).bind(crime);
                     break;
