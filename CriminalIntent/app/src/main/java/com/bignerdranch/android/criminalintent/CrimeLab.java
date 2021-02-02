@@ -9,6 +9,7 @@ import com.bignerdranch.android.criminalintent.datebase.CrimeBaseHelper;
 import com.bignerdranch.android.criminalintent.datebase.CrimeCursorWrapper;
 import com.bignerdranch.android.criminalintent.datebase.CrimeDbSchema;
 
+import java.io.File;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +77,12 @@ public class CrimeLab {
         }
     }
 
+    public File getPhotoFile(Crime crime) {
+        File filesDir = mContext.getFilesDir();
+        return new File(filesDir, crime.getPhotoFilename());
+        //if (filesDir == null) {}
+    }
+
     public void addCrime (Crime c){
         ContentValues values = getContentValues(c);
 
@@ -88,6 +95,7 @@ public class CrimeLab {
         values.put(CrimeTable.Cols.TITLE, crime.getTitle());
         values.put(CrimeTable.Cols.DATE, crime.getDate().getTime());
         values.put(CrimeTable.Cols.SOLVED, crime.isSolved() ? 1 : 0);
+        values.put(CrimeTable.Cols.SUSPECT, crime.getSuspect());
 
         return values;
     }

@@ -6,6 +6,7 @@ import java.util.UUID;
 public class Crime {
     private UUID mId;
     private String mTitle;
+    private String mSuspect;
     private Date mDate;
     private boolean mSolved;
     private boolean mRequiresPolice;
@@ -36,6 +37,18 @@ public class Crime {
 
     public Date getDate() {
         return mDate;
+    }
+
+    public String getSuspect() {
+        return mSuspect;
+    }
+
+    public String getPhotoFilename() {
+        return "IMG_" + getId().toString() + ".jpg";
+    }
+
+    public void setSuspect(String mSuspect) {
+        this.mSuspect = mSuspect;
     }
 
     public void setDate(Date date) {
