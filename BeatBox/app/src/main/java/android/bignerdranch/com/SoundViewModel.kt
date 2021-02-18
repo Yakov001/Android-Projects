@@ -1,6 +1,9 @@
 package android.bignerdranch.com
 
-class SoundViewModel (beatBox: BeatBox){
+import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
+
+class SoundViewModel (beatBox: BeatBox) : BaseObservable() {
     private lateinit var mSound : Sound
     private var mBeatBox: BeatBox = beatBox
 
@@ -10,8 +13,10 @@ class SoundViewModel (beatBox: BeatBox){
 
     fun setSound (sound : Sound) {
         mSound = sound
+        notifyChange()
     }
 
+    @Bindable
     fun getTitle () : String {
         return mSound.getName()
     }
