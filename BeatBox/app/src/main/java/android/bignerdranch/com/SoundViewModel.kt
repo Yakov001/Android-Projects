@@ -21,5 +21,9 @@ class SoundViewModel (beatBox: BeatBox) : BaseObservable() {
         return mSound.getName()
     }
 
+    fun onButtonClicked() {
+        mBeatBox.play(mSound)
+    }
+
 
 }

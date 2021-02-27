@@ -70,4 +70,8 @@ class BeatBox (var context : Context) {
         return mSounds
     }
 
+    fun release () {
+        mSoundPool.release()
+    }
+
 }
