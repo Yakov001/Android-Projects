@@ -25,7 +25,6 @@ class BeatBox (var context : Context) {
         private var TAG = "BeatBox"
         private var SOUNDS_FOLDER = "sample_sounds"
         private var MAX_SOUNDS = 5
-
     }
 
     fun play (sound: Sound) {
