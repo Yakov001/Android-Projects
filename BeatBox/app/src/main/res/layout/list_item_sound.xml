@@ -6,12 +6,18 @@
             name="viewModel"
             type="android.bignerdranch.com.SoundViewModel"/>
     </data>
-    <Button
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
         tools:text="Sound name"
         android:onClick="@{() -> viewModel.onButtonClicked()}"
         android:text="@{viewModel.title}"
 
         />
+    </FrameLayout>
 </layout>
