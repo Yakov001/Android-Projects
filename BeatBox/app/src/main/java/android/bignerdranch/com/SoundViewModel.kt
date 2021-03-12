@@ -3,9 +3,10 @@ package android.bignerdranch.com
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 
-class SoundViewModel (beatBox: BeatBox) : BaseObservable() {
+class SoundViewModel (beatBox: BeatBox, speed: Float = 1.0f) : BaseObservable() {
     private lateinit var mSound : Sound
     private var mBeatBox: BeatBox = beatBox
+    private var mSpeed : Float = speed
 
     fun getSound (): Sound {
         return mSound
@@ -22,7 +23,11 @@ class SoundViewModel (beatBox: BeatBox) : BaseObservable() {
     }
 
     fun onButtonClicked() {
-        mBeatBox.play(mSound)
+        mBeatBox.play(mSound, BeatBoxFragment.getSpeed())
+    }
+
+    fun getSpeed () : Float {
+        return mSpeed
     }
 
 

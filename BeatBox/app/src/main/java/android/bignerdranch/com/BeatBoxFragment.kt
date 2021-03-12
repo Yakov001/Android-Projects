@@ -16,8 +16,19 @@ import androidx.recyclerview.widget.RecyclerView
 class BeatBoxFragment : Fragment() {
 
     private lateinit var mBeatBox : BeatBox
+    private var mSpeed = 1.0f
 
     companion object {
+        var mSpeed = 1.0f
+
+        fun getSpeed() :Float {
+            return mSpeed
+        }
+
+        fun getSpeedForBar() : String{
+            return "Playback Speed : $mSpeed%"
+        }
+
         fun newInstance () : BeatBoxFragment {
             return BeatBoxFragment()
         }
@@ -45,7 +56,13 @@ class BeatBoxFragment : Fragment() {
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
+                var speed: Float? = seekBar?.progress?.toFloat()?.div(50)
+                if (speed != null) {
+                    mSpeed = speed
+                    Companion.mSpeed = speed
+                    binding.playbackSpeed.text = "Playback Speed : $speed"
+                    return
+                }
             }
         })
         return binding.root
@@ -56,13 +73,17 @@ class BeatBoxFragment : Fragment() {
         mBeatBox.release()
     }
 
+    fun getSpeed() :Float {
+        return mSpeed
+    }
+
     //____________________________________________________________________________________________//
     private inner class SoundHolder (binding: ListItemSoundBinding) : RecyclerView.ViewHolder (binding.root) {
 
         private var mBinding : ListItemSoundBinding = binding
 
         init {
-            mBinding.viewModel = SoundViewModel(mBeatBox)
+            mBinding.viewModel = SoundViewModel(mBeatBox, mSpeed)
         }
 
         fun bind (sound : Sound) {

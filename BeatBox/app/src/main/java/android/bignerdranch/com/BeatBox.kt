@@ -28,10 +28,10 @@ class BeatBox (var context : Context) {
 
     }
 
-    fun play (sound: Sound) {
+    fun play (sound: Sound, speed: Float = 1.0f) {
         var soundId = sound.getSoundId()
         if (soundId == null) return
-        mSoundPool.play(soundId, 1.0f, 1.0f, 1 , 0, 1.0f)
+        mSoundPool.play(soundId, 1.0f, 1.0f, 1 , 0, speed)
 
     }
 
