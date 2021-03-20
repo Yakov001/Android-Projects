@@ -4,16 +4,19 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
+import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.list_item.view.*
 import java.util.*
 
 class NerdLauncherFragment : Fragment(){
@@ -66,13 +69,15 @@ class NerdLauncherFragment : Fragment(){
 
     private class ActivityHolder(itemView : View) : RecyclerView.ViewHolder(itemView) , View.OnClickListener {
         private lateinit var mResolveInfo : ResolveInfo
-        private var mNameTextView : TextView = itemView as TextView
+        private var mNameTextView : TextView = itemView.findViewById(R.id.text_view)
+        private var mImageView : ImageView = itemView.findViewById(R.id.image_view)
 
         fun bindActivity (resolveInfo: ResolveInfo) {
             mResolveInfo = resolveInfo
             var ctxt : Context = itemView.context
             var pm : PackageManager = ctxt.packageManager
             mNameTextView.text = mResolveInfo.loadLabel(pm).toString()
+            mImageView.setImageDrawable(mResolveInfo.loadIcon(pm))
             mNameTextView.setOnClickListener(this)
         }
 
@@ -93,7 +98,7 @@ class NerdLauncherFragment : Fragment(){
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActivityHolder {
             var layoutInflater = LayoutInflater.from(parent.context)
-            var view = layoutInflater.inflate(android.R.layout.simple_list_item_2, parent, false)
+            var view = layoutInflater.inflate(R.layout.list_item, parent, false)
             return ActivityHolder(view)
         }
 
