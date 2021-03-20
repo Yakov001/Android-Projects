@@ -11,42 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9493ef9b-bf6b-4d07-ac4f-35f1420cffe2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/androidTest/java/android/bignerdranch/nerdlauncher/ExampleInstrumentedTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/java/android/bignerdranch/nerdlauncher/MainActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/java/android/bignerdranch/nerdlauncher/NerdLauncherFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/java/android/bignerdranch/nerdlauncher/SingleFragmentActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/layout/fragment_nerd_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/app/src/test/java/android/bignerdranch/nerdlauncher/ExampleUnitTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NerdLauncher/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NerdLauncher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NerdLauncher/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +27,12 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -96,7 +66,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/android/bignerdranch/com" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NerdLauncher" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CriminalIntent" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -343,10 +313,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="94" y="94" width="1313" height="773" key="DiffContextDialog/0.0.1500.960@0.0.1500.960" timestamp="1614446803503" />
-    <state x="531" y="236" key="FileChooserDialogImpl" timestamp="1615915536240">
+    <state x="531" y="236" key="FileChooserDialogImpl" timestamp="1616241410932">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1615915536240" />
+    <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1616241410932" />
     <state width="1456" height="254" key="GridCell.Tab.0.bottom" timestamp="1615629525831">
       <screen x="0" y="0" width="1500" height="960" />
     </state>

@@ -10,7 +10,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6663459-f517-49a3-a566-3030a9919c70" name="Default Changelist" comment="" />
+    <list default="true" id="a311ed35-c124-43dc-a40c-32df4e4fea35" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +52,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3_API_R" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-03-18T11:06:46.567Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CriminalIntent" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -154,10 +154,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="331" y="236" key="AndroidCreateResourceFileDialog/0.0.1500.960@0.0.1500.960" timestamp="1615712838350" />
-    <state x="531" y="207" key="FileChooserDialogImpl" timestamp="1616239730884">
+    <state x="531" y="207" key="FileChooserDialogImpl" timestamp="1616241392230">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="531" y="207" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1616239730884" />
+    <state x="531" y="207" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1616241392230" />
     <state width="1456" height="315" key="GridCell.Tab.0.bottom" timestamp="1616143203497">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
