@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Beat_Box.iml" filepath="$PROJECT_DIR$/.idea/modules/Beat_Box.iml" group="Beat_Box" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Beat Box/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BeatBox.iml" filepath="$PROJECT_DIR$/.idea/modules/BeatBox.iml" group="BeatBox" />
     </modules>
   </component>
 </project>
