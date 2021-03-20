@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\Yakov\\Code\\My Projects\\BeatBox\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\list_item_sound.xml",
+        "source": "C:\\Users\\Yakov\\Code\\My Projects\\BeatBox\\app\\src\\main\\res\\layout\\list_item_sound.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yakov\\Code\\My Projects\\BeatBox\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_beat_box.xml",
+        "source": "C:\\Users\\Yakov\\Code\\My Projects\\BeatBox\\app\\src\\main\\res\\layout\\fragment_beat_box.xml"
+    }
+]
