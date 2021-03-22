@@ -2,6 +2,10 @@ package android.bignerdranch.photogallery
 
 import android.net.Uri
 import android.util.Log
+import android.widget.Gallery
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 import java.net.HttpURLConnection
@@ -37,7 +41,7 @@ class FlickrFetchr {
             do {
                 bytesRead = inStream.read(buffer)
                 if (bytesRead == -1){
-                    throw IOException("BAD!")
+                    break
                 }
                 out.write(buffer, 0, bytesRead)
             } while (bytesRead > 0)
@@ -53,7 +57,9 @@ class FlickrFetchr {
         return String(getUrlBytes(urlSpec))
     }
 
-    fun fetchItems () {
+    fun fetchItems () : MutableList<GalleryItem> {
+        var items = ArrayList<GalleryItem>()
+
         try {
             var url = Uri.parse("https://api.flickr.com/services/rest/")
                 .buildUpon()
@@ -65,8 +71,33 @@ class FlickrFetchr {
                 .build().toString()
             var jsonString = getUrlString(url)
             Log.i(TAG, "Received JSON: $jsonString")
+            var jsonBody = JSONObject(jsonString)
+            parseItems(items, jsonBody)
         } catch (ioe : IOException) {
             Log.e(TAG, "Failed to fetch items", ioe)
+        } catch ( je : JSONException) {
+            Log.e(TAG, "Failed to parse JSON", je)
+        }
+
+        return items
+    }
+
+    fun parseItems ( items : MutableList<GalleryItem>, jsonBody : JSONObject){
+        var photosJsonObject = jsonBody.getJSONObject("photos")
+        var photoJsonArray : JSONArray = photosJsonObject.getJSONArray("photo")
+
+        for ( i in 0..photoJsonArray.length()){
+            var photoJsonObject : JSONObject = photoJsonArray.get(i) as JSONObject
+
+            var item = GalleryItem(
+                photoJsonObject.getString("id"),
+                photoJsonObject.getString("title")
+            )
+
+            if(!photoJsonObject.has("url_s")) continue
+
+            item.setmUrl(photoJsonObject.getString("url_s"))
+            items.add(item)
         }
     }
 }
