@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Playground</string>
+    <string name="button_main">Button</string>
+    <string name="hint_currency">USD</string>
+    <string name="usd">USD</string>
+    <string name="_100">100</string>
+</resources>
